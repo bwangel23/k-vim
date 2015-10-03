@@ -70,7 +70,7 @@ set shortmess=atI
 " 取消备份。 视情况自己改
 set nobackup
 " 关闭交换文件
-set noswapfile
+" set noswapfile
 
 
 " TODO: remove this, use gundo
@@ -411,7 +411,7 @@ noremap L $
 
 
 " Map ; to : and save a million keystrokes 用于快速进入命令行
-nnoremap ; :
+" nnoremap ; :
 
 
 " 命令行模式增强，ctrl - a到行首， -e 到行尾
@@ -569,6 +569,15 @@ au BufWinEnter *.php set mps-=<:>
 
 
 
+" 设置C和C++的Tab键为8
+function Tab8()
+	set tabstop=8
+	set shiftwidth=8
+endfunc
+
+autocmd FileType c exec "call Tab8()"
+autocmd FileType cpp exec "call Tab8()"
+
 " 保存python文件时删除多余空格
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
@@ -580,11 +589,15 @@ autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,pe
 
 
 " 定义函数AutoSetFileHead，自动插入文件头
-autocmd BufNewFile *.sh,*.py exec ":call AutoSetFileHead()"
+autocmd BufNewFile *.sh,*.py,*.c,*.cpp exec ":call AutoSetFileHead()"
 function! AutoSetFileHead()
     "如果文件类型为.sh文件
     if &filetype == 'sh'
-        call setline(1, "\#!/bin/bash")
+        call setline(1,"#!/bin/bash")
+        call setline(2,"#History:")
+        call setline(3,"#   Michael	".strftime("%b,%d,%Y"))
+        call setline(4,"#Program:")
+        call setline(5,"#")
     endif
 
     "如果文件类型为python
@@ -593,9 +606,37 @@ function! AutoSetFileHead()
         call append(1, "\# encoding: utf-8")
     endif
 
-    normal G
-    normal o
-    normal o
+    "如果文件类型为c
+    if &filetype == "c"
+        call setline(1,"#include<apue.h>")
+        call append(line("."),"")
+        call append(line(".")+1,"int main(int argc,char *argv[])")
+        call append(line(".")+2,"{")
+        call append(line(".")+3,"	return 0;")
+        call append(line(".")+4,"}")
+    endif
+
+    "如果文件类型为c++
+    if &filetype == "cpp"
+        call setline(1,"#include<iostream>")
+        call append(line("."),"using namespace std;")
+        call append(line(".")+1,"int main()")
+        call append(line(".")+2,"{")
+        call append(line(".")+3,"	return 0;")
+        call append(line(".")+4,"}")
+    endif
+
+
+    if &filetype == 'python' || &filetype == 'sh'
+        normal G
+        normal o
+        normal o
+    elseif &filetype == 'c' || &filetype == 'cpp'
+        normal G
+        normal k
+        normal O
+    endif
+
 endfunc
 
 
@@ -683,6 +724,11 @@ highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
+" change word to uppercase, I love this very much
+inoremap <C-y> <esc>gUiwea
 
+" 将%:h映射为%%，%:h的功能是显示当前缓冲区文件的绝对路径
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-
+" 将<F10>按键映射成打开或者关闭paste选项的开关
+set pastetoggle=<F10>
