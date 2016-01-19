@@ -396,14 +396,9 @@ noremap H ^
 noremap L $
 
 
-<<<<<<< HEAD
-" Map ; to : and save a million keystrokes 用于快速进入命令行
-nnoremap ; :
-=======
 "Map ; to : and save a million keystrokes
 " ex mode commands made easy 用于快速进入命令行
 " nnoremap ; :
->>>>>>> b5a5291ddc1a600757319d0f152ccb0e468eb316
 
 
 " 命令行模式增强，ctrl - a到行首， -e 到行尾
@@ -698,11 +693,8 @@ set t_Co=256
 
 colorscheme solarized
 " colorscheme molokai
-<<<<<<< HEAD
-=======
 " colorscheme Tomorrow-Night
 " colorscheme Tomorrow-Night-Bright
->>>>>>> b5a5291ddc1a600757319d0f152ccb0e468eb316
 " colorscheme desert
 
 
@@ -721,11 +713,6 @@ highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
-<<<<<<< HEAD
-
-
-
-=======
 " change word to uppercase, I love this very much
 inoremap <C-y> <esc>gUiwea
 
@@ -734,4 +721,3 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " 将<F10>按键映射成打开或者关闭paste选项的开关
 set pastetoggle=<F10>
->>>>>>> b5a5291ddc1a600757319d0f152ccb0e468eb316
