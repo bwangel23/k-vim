@@ -729,6 +729,3 @@ inoremap <C-y> <esc>gUiwea
 
 " 将%:h映射为%%，%:h的功能是显示当前缓冲区文件的绝对路径
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
-" 将<F10>按键映射成打开或者关闭paste选项的开关
-set pastetoggle=<F10>
