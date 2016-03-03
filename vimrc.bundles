@@ -130,10 +130,10 @@ Plug 'bling/vim-airline'
 Plug 'kien/rainbow_parentheses.vim'
 " 主题 solarized
 " solarized
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
 " molokai
 " 主题 molokai
-Plug 'tomasr/molokai'
+" Plug 'tomasr/molokai'
 
 
 " nav
