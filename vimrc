@@ -327,8 +327,11 @@ function! HideNumber()
   set number?
 endfunc
 nnoremap <F2> :call HideNumber()<CR>
+
 " F3 显示可打印字符开关
+set listchars=tab:›-,trail:•,extends:#,nbsp:f,eol:$
 nnoremap <F3> :set list! list?<CR>
+
 " F4 换行开关
 nnoremap <F4> :set wrap! wrap?<CR>
 
@@ -337,6 +340,9 @@ nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
 
 " F7 快速运行dot生成png文件
 nnoremap <F7> :!dot -O -Tpng %<CR>
+
+" F9 is used to Open or Close NERDTree
+noremap <F9> :NERDTreeToggle<CR>
 
 set pastetoggle=<F5>            "    when in insert mode, press <F5> to go to
                                 "    paste mode, where you can paste mass data
