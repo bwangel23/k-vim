@@ -89,7 +89,7 @@ set nobackup
 set wildignore=*.swp,*.bak,*.pyc,*.class,.svn
 
 " 突出显示当前列
-set cursorcolumn
+" set cursorcolumn
 " 突出显示当前行
 set cursorline
 
