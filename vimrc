@@ -60,7 +60,7 @@ filetype plugin indent on
 " 文件修改之后自动载入
 set autoread
 " 启动的时候不显示那个援助索马里儿童的提示
-set shortmess=atI
+" set shortmess=atI
 
 " 备份,到另一个位置. 防止误删, 目前是取消备份
 "set backup
