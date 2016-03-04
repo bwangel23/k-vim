@@ -224,6 +224,7 @@ set ttyfast
 " 00x增减数字时使用十进制
 set nrformats=
 
+<<<<<<< HEAD
 " 相对行号: 行号变成相对，可以用 nj/nk 进行跳转
 set relativenumber number
 au FocusLost * :set norelativenumber number
@@ -249,6 +250,8 @@ if &term =~ '256color'
   set t_ut=
 endif
 
+=======
+>>>>>>> 删除了相对行号，添加了生成图片的按钮
 "==========================================
 " FileEncode Settings 文件编码,格式
 "==========================================
