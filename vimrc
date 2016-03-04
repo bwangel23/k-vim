@@ -87,6 +87,8 @@ set wildignore=*.swp,*.bak,*.pyc,*.class,.svn
 set cursorcolumn
 " 突出显示当前行
 set cursorline
+" 显示80行显示
+set colorcolumn=81
 
 
 " 设置 退出vim后，内容显示在终端屏幕, 可以用于查看和复制, 不需要可以去掉
@@ -122,7 +124,8 @@ set magic
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
+" 转折换行的配置
+set whichwrap+=<,>
 
 "==========================================
 " Display Settings 展示/排版等界面格式设置
@@ -544,13 +547,12 @@ au BufWinEnter *.php set mps-=<:>
 
 
 " 设置C和C++的Tab键为8
-function Tab8()
+function! Tab8()
 	set tabstop=8
 	set shiftwidth=8
 endfunc
 
-autocmd FileType c exec "call Tab8()"
-autocmd FileType cpp exec "call Tab8()"
+autocmd FileType c,cpp exec "call Tab8()"
 
 " 保存python文件时删除多余空格
 fun! <SID>StripTrailingWhitespaces()
