@@ -224,30 +224,6 @@ set ttyfast
 " 00x增减数字时使用十进制
 set nrformats=
 
-" 相对行号: 行号变成相对，可以用 nj/nk 进行跳转
-set relativenumber number
-au FocusLost * :set norelativenumber number
-au FocusGained * :set relativenumber
-" 插入模式下用绝对行号, 普通模式下用相对
-autocmd InsertEnter * :set norelativenumber number
-autocmd InsertLeave * :set relativenumber
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber number
-  else
-    set relativenumber
-  endif
-endfunc
-nnoremap <C-n> :call NumberToggle()<cr>
-
-" 防止tmux下vim的背景色显示异常
-" Refer: http://sunaku.github.io/vim-256color-bce.html
-if &term =~ '256color'
-  " disable Background Color Erase (BCE) so that color schemes
-  " render properly when inside 256-color tmux and GNU screen.
-  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
-  set t_ut=
-endif
 
 "==========================================
 " FileEncode Settings 文件编码,格式
@@ -367,9 +343,6 @@ nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
 
 " F7 快速运行dot生成png文件
 nnoremap <F7> :!dot -O -Tpng %<CR>
-
-" F9 is used to Open or Close NERDTree
-noremap <F9> :NERDTreeToggle<CR>
 
 set pastetoggle=<F5>            "    when in insert mode, press <F5> to go to
                                 "    paste mode, where you can paste mass data
