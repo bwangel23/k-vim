@@ -180,18 +180,6 @@ set foldenable
 " marker    使用标记进行折叠, 默认标记是 {{{ 和 }}}
 set foldmethod=indent
 set foldlevel=99
-" 代码折叠自定义快捷键 <leader>zz
-let g:FoldMethod = 0
-map <leader>zz :call ToggleFold()<cr>
-fun! ToggleFold()
-    if g:FoldMethod == 0
-        exe "normal! zM"
-        let g:FoldMethod = 1
-    else
-        exe "normal! zR"
-        let g:FoldMethod = 0
-    endif
-endfun
 
 " 缩进配置
 " Smart indent
@@ -328,9 +316,8 @@ function! HideNumber()
 endfunc
 nnoremap <F2> :call HideNumber()<CR>
 
-" F3 显示可打印字符开关
-set listchars=tab:›-,trail:•,extends:#,nbsp:f,eol:$
-nnoremap <F3> :set list! list?<CR>
+" F3 is used to Open or Close NERDTree
+noremap <F3> :NERDTreeToggle<CR>
 
 " F4 换行开关
 nnoremap <F4> :set wrap! wrap?<CR>
@@ -341,8 +328,9 @@ nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
 " F7 快速运行dot生成png文件
 nnoremap <F7> :!dot -O -Tpng %<CR>
 
-" F9 is used to Open or Close NERDTree
-noremap <F9> :NERDTreeToggle<CR>
+" F9 显示可打印字符开关
+set listchars=tab:›-,trail:•,extends:#,nbsp:f,eol:$
+nnoremap <F9> :set list! list?<CR>
 
 set pastetoggle=<F5>            "    when in insert mode, press <F5> to go to
                                 "    paste mode, where you can paste mass data
@@ -709,7 +697,7 @@ highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
 " change word to uppercase, I love this very much
-inoremap <C-y> <esc>gUiwea
+" inoremap <C-y> <esc>gUiwea
 
 " 将%:h映射为%%，%:h的功能是显示当前缓冲区文件的绝对路径
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
