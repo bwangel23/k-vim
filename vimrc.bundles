@@ -57,7 +57,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat' | Plug 'tpope/vim-surround'
 " trailingwhitespace
 " 快速去行尾空格 [, + <Space>]
-Plug 'bronson/vim-trailing-whitespace'
+Plug 'bwangel23/vim-trailing-whitespace'
 " easyalign
 " 快速赋值语句对齐
 Plug 'junegunn/vim-easy-align'
@@ -131,10 +131,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/rainbow_parentheses.vim'
 " 主题 solarized
 " solarized
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
 " molokai
 " 主题 molokai
-Plug 'tomasr/molokai'
+" Plug 'tomasr/molokai'
 
 
 " nav
@@ -143,7 +143,7 @@ Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
 " ctrlspace
 Plug 'szw/vim-ctrlspace'
 " tagbar
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 
 " text object
 " 支持自定义文本对象
@@ -244,7 +244,7 @@ endif
 
 if count(g:bundle_groups, 'html')
     " ###### emmet HTML complete #########
-    " Plug "mattn/emmet-vim"
+    Plug 'mattn/emmet-vim'
 endif
 
 if count(g:bundle_groups, 'nginx')
@@ -671,8 +671,8 @@ call plug#end()
     let g:nerdtree_tabs_synchronize_focus=0
     " 是否自动开启nerdtree
     " thank to @ListenerRi, see https://github.com/wklken/k-vim/issues/165
-    let g:nerdtree_tabs_open_on_console_startup=1
-    let g:nerdtree_tabs_open_on_gui_startup=1
+    let g:nerdtree_tabs_open_on_console_startup=0
+    let g:nerdtree_tabs_open_on_gui_startup=0
 " }}}
 
 
@@ -792,6 +792,9 @@ call plug#end()
 " nginx {{{
 " }}}
 
+" emmet-vim {{{
+    let g:user_emmet_leader_key='<C-Z>'
+" }}
 
 " ####### temp #######
 
@@ -809,5 +812,4 @@ call plug#end()
     " setenv PYTHONIOENCODING UTF-8
     " nnoremap <leader>y :call Yapf()<cr>
 " }}}
-
 "------------------------------------------- end of configs --------------------------------------------

@@ -59,8 +59,8 @@ filetype plugin indent on
 
 " 文件修改之后自动载入
 set autoread
-" 启动的时候不显示那个援助乌干达儿童的提示
-set shortmess=atI
+" 启动的时候不显示那个援助索马里儿童的提示
+" set shortmess=atI
 
 " 备份,到另一个位置. 防止误删, 目前是取消备份
 "set backup
@@ -84,7 +84,7 @@ set nobackup
 set wildignore=*.swp,*.bak,*.pyc,*.class,.svn
 
 " 突出显示当前列
-set cursorcolumn
+" set cursorcolumn
 " 突出显示当前行
 set cursorline
 " 显示80行显示
@@ -180,18 +180,6 @@ set foldenable
 " marker    使用标记进行折叠, 默认标记是 {{{ 和 }}}
 set foldmethod=indent
 set foldlevel=99
-" 代码折叠自定义快捷键 <leader>zz
-let g:FoldMethod = 0
-map <leader>zz :call ToggleFold()<cr>
-fun! ToggleFold()
-    if g:FoldMethod == 0
-        exe "normal! zM"
-        let g:FoldMethod = 1
-    else
-        exe "normal! zR"
-        let g:FoldMethod = 0
-    endif
-endfun
 
 " 缩进配置
 " Smart indent
@@ -327,8 +315,10 @@ function! HideNumber()
   set number?
 endfunc
 nnoremap <F2> :call HideNumber()<CR>
-" F3 显示可打印字符开关
-nnoremap <F3> :set list! list?<CR>
+
+" F3 is used to Open or Close NERDTree
+noremap <F3> :NERDTreeToggle<CR>
+
 " F4 换行开关
 nnoremap <F4> :set wrap! wrap?<CR>
 
@@ -337,6 +327,10 @@ nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
 
 " F7 快速运行dot生成png文件
 nnoremap <F7> :!dot -O -Tpng %<CR>
+
+" F9 显示可打印字符开关
+set listchars=tab:›-,trail:•,extends:#,nbsp:f,eol:$
+nnoremap <F9> :set list! list?<CR>
 
 set pastetoggle=<F5>            "    when in insert mode, press <F5> to go to
                                 "    paste mode, where you can paste mass data
@@ -680,11 +674,11 @@ endif
 set background=dark
 set t_Co=256
 
-colorscheme solarized
+" colorscheme solarized
 " colorscheme molokai
 " colorscheme Tomorrow-Night
 " colorscheme Tomorrow-Night-Bright
-" colorscheme desert
+colorscheme desert
 
 
 " 设置标记一列的背景颜色和数字一行颜色一致
@@ -703,7 +697,7 @@ highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
 " change word to uppercase, I love this very much
-inoremap <C-y> <esc>gUiwea
+" inoremap <C-y> <esc>gUiwea
 
 " 将%:h映射为%%，%:h的功能是显示当前缓冲区文件的绝对路径
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
