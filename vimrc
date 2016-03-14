@@ -296,7 +296,7 @@ nnoremap gk k
 nnoremap j gj
 nnoremap gj j
 
-" F1 - F6 设置
+" F1 - F9 设置
 
 " F1 废弃这个键,防止调出系统帮助
 " I can type :help on my own, thanks.  Protect your fat fingers from the evils of <F1>
@@ -327,6 +327,9 @@ nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
 
 " F7 快速运行dot生成png文件
 nnoremap <F7> :!dot -O -Tpng %<CR>
+
+" F8 为tagbar显示导航栏的快捷键
+" 见vimrc.bundles:691
 
 " F9 显示可打印字符开关
 set listchars=tab:›-,trail:•,extends:#,nbsp:f,eol:$

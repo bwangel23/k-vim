@@ -143,7 +143,7 @@ Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
 " ctrlspace
 Plug 'szw/vim-ctrlspace'
 " tagbar
-" Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 " text object
 " 支持自定义文本对象
@@ -688,7 +688,7 @@ call plug#end()
 
 " 标签导航
 " tagbar {{{
-    nmap <F9> :TagbarToggle<CR>
+    nmap <F8> :TagbarToggle<CR>
     let g:tagbar_autofocus = 1
     " let g:tagbar_autoshowtag = 1
     " let g:tagbar_show_visibility = 1
