@@ -310,17 +310,7 @@ noremap <F1> <Esc>"
 
 " F2 行号开关，用于鼠标复制代码用
 " 为方便复制，用<F2>开启/关闭行号显示:
-function! HideNumber()
-  if(&relativenumber == &number)
-    set relativenumber! number!
-  elseif(&number)
-    set number!
-  else
-    set relativenumber!
-  endif
-  set number?
-endfunc
-nnoremap <F2> :call HideNumber()<CR>
+nnoremap <F2> :set number! number?<CR>
 
 " F3 is used to Open or Close NERDTree
 noremap <F3> :NERDTreeToggle<CR>
