@@ -73,17 +73,12 @@ set nobackup
 " set noswapfile
 
 
-" TODO: remove this, use gundo
-" create undo file
+"create undo file
 " if has('persistent_undo')
-  " " How many undos
-  " set undolevels=1000
-  " " number of lines to save for undo
-  " set undoreload=10000
-  " " So is persistent undo ...
-  " "set undofile
-  " set noundofile
-  " " set undodir=/tmp/vimundo/
+"   set undolevels=1000         " How many undos
+"   set undoreload=10000        " number of lines to save for undo
+"   set undofile                " So is persistent undo ...
+"   set undodir=/tmp/vimundo/
 " endif
 
 set wildignore=*.swp,*.bak,*.pyc,*.class,.svn
