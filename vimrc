@@ -535,16 +535,6 @@ autocmd BufRead,BufNewFile *.part set filetype=html
 " disable showmatch when use > in php
 au BufWinEnter *.php set mps-=<:>
 
-
-
-" 设置C和C++的Tab键为8
-function! Tab8()
-	set tabstop=8
-	set shiftwidth=8
-endfunc
-
-autocmd FileType c,cpp exec "call Tab8()"
-
 " 保存python文件时删除多余空格
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
