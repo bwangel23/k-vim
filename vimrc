@@ -565,12 +565,15 @@ function! AutoSetFileHead()
 
     "如果文件类型为c
     if &filetype == "c"
-        call setline(1,"#include<apue.h>")
-        call append(line("."),"")
-        call append(line(".")+1,"int main(int argc,char *argv[])")
-        call append(line(".")+2,"{")
-        call append(line(".")+3,"	return 0;")
-        call append(line(".")+4,"}")
+        call setline(1,"#include<stdio.h>")
+        call append(line("."), "#include<string.h>")
+        call append(line(".")+1, "#include<stdlib.h>")
+        call append(line(".")+2, "#include<errno.h>")
+        call append(line(".")+3, "")
+        call append(line(".")+4, "int main(int argc, char *argv[])")
+        call append(line(".")+5, "{")
+        call append(line(".")+6, "	return 0;")
+        call append(line(".")+7, "}")
     endif
 
     "如果文件类型为c++
