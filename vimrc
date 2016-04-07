@@ -687,7 +687,7 @@ highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
 " change word to uppercase, I love this very much
-" inoremap <C-y> <esc>gUiwea
+inoremap <C-y> <esc>gUiwea
 
 " 将%:h映射为%%，%:h的功能是显示当前缓冲区文件的绝对路径
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
