@@ -352,8 +352,8 @@ map <C-l> <C-W>l
 
 
 " 屏幕左右滑动的快捷键
-map <C-Right> zl
-map <C-Left> zh
+map <M-Right> zl
+map <M-Left> zh
 map <S-Right> zL
 map <S-Left> zH
 
