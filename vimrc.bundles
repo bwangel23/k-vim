@@ -51,6 +51,8 @@ Plug 'docunext/closetag.vim'
 " 快速注释
 Plug 'tpope/vim-commentary'
 
+Plug 'klen/python-mode'
+
 
 " 快速加入修改环绕字符
 " for repeat -> enhance surround.vim, . to repeat command
