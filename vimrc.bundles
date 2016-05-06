@@ -37,6 +37,7 @@ Plug 'scrooloose/syntastic'
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
+
 " auto complete
 " 代码自动补全
 " 迄今为止用到的最好的自动VIM自动补全插件
@@ -47,11 +48,12 @@ Plug 'Raimondi/delimitMate'
 " 自动补全html/xml标签
 Plug 'docunext/closetag.vim'
 
+" python-mode
+Plug 'klen/python-mode'
+
 " quick edit
 " 快速注释
 Plug 'tpope/vim-commentary'
-
-Plug 'klen/python-mode'
 
 
 " 快速加入修改环绕字符
@@ -399,6 +401,17 @@ call plug#end()
         \}
 " }}}
 
+" python-mode {{{
+    " 先关闭自动补全
+    let g:pymode_rope_complete_on_dot = 0
+    let g:pymode_rope_completion = 0
+    let g:pymode_rope_autoimport = 0
+    " Pymode自动运行开启
+    let g:pymode_run = 1
+    " 设置80 Char line
+    let g:pymode_options_colorcolumn = 1
+    let g:pymode_options_max_line_length = 79
+" }}}
 
 " ultisnips {{{
     let g:UltiSnipsExpandTrigger       = "<tab>"
