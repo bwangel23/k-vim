@@ -560,6 +560,7 @@ call plug#end()
 
 
 " ctrlsf {{{
+    nmap <leader>q <Plug>CtrlSFPrompt
     nmap \ <Plug>CtrlSFCwordPath<CR>
     " let g:ctrlsf_position = 'below'
     " let g:ctrlsf_winsize = '30%'
