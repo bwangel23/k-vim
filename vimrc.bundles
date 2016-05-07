@@ -48,9 +48,6 @@ Plug 'Raimondi/delimitMate'
 " 自动补全html/xml标签
 Plug 'docunext/closetag.vim'
 
-" python-mode
-Plug 'klen/python-mode'
-
 " quick edit
 " 快速注释
 Plug 'tpope/vim-commentary'
