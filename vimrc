@@ -562,13 +562,15 @@ function! AutoSetFileHead()
     if &filetype == 'python'
         call setline(1, "\#!/usr/bin/env python3")
         call append(1, "\# -*- coding: utf-8 -*-")
+        call append(2, "")
     endif
 
     "如果文件类型为Ruby
     if &filetype == 'ruby'
         call setline(1, "\#!/usr/bin/env ruby")
         call append(1, "\# -*- coding: utf-8 -*-")
-    end
+        call append(2, "")
+    endif
 
     "如果文件类型为c
     if &filetype == "c"
@@ -594,7 +596,7 @@ function! AutoSetFileHead()
     endif
 
 
-    if &filetype == 'python' || &filetype == 'sh'
+    if &filetype == 'python' || &filetype == 'sh' || &filetype == 'ruby'
         normal G
         normal o
         normal o
