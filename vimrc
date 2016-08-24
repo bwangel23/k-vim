@@ -314,7 +314,7 @@ nnoremap <F4> :set wrap! wrap?<CR>
 nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
 
 " F7 快速运行dot生成png文件
-nnoremap <F7> :!dot -Tpng -o %<.png %<CR>
+nnoremap <F7> :!circo -Tpng -o %<.png % && eog %<.png<CR>
 
 " F8 为tagbar显示导航栏的快捷键
 " 见vimrc.bundles:691
