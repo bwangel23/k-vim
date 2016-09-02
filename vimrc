@@ -350,10 +350,10 @@ map <C-l> <C-W>l
 
 
 " 屏幕左右滑动的快捷键
-map <M-Right> zl
-map <M-Left> zh
-map <S-Right> zL
-map <S-Left> zH
+nnoremap <M-Right> zl
+nnoremap <M-Left> zh
+nnoremap <S-Right> zL
+nnoremap <S-Left> zH
 
 
 " http://stackoverflow.com/questions/13194428/is-better-way-to-zoom-windows-in-vim-than-zoomwin
