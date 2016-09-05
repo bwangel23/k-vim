@@ -480,7 +480,7 @@ vnoremap > >gv
 map Y y$
 
 " 复制选中区到系统剪切板中
-vnoremap <leader>y "+y
+vnoremap y "+y
 
 " auto jump to end of select
 " vnoremap <silent> y y`]
