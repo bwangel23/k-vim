@@ -86,9 +86,11 @@ set nobackup
 set wildignore=*.swp,*.bak,*.pyc,*.class,.svn
 
 " 突出显示当前列
-" set cursorcolumn
+set cursorcolumn
 " 突出显示当前行
 set cursorline
+" 设置80行提示线
+set colorcolumn=80
 
 
 " 设置 退出vim后，内容显示在终端屏幕, 可以用于查看和复制, 不需要可以去掉
