@@ -17,7 +17,7 @@ filetype off " required! turn off
 " inspired by spf13, 自定义需要的插件集合
 if !exists('g:bundle_groups')
     " let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'beta', 'json', 'nginx', 'golang', 'ruby', 'less', 'php', 'coffeescript']
-    let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'beta', 'json', 'nginx', 'golang']
+    let g:bundle_groups=['markdown', 'html', 'nginx']
 endif
 
 " ----------------------------------------------------------------------------
@@ -368,6 +368,8 @@ call plug#end()
     let g:ycm_collect_identifiers_from_tags_files = 1
     " 开启语法关键字补全
     let g:ycm_seed_identifiers_with_syntax=1
+    " 设置Python解释器的路径
+    let g:ycm_server_python_interpreter = '/usr/local/bin/python'
     " 设置Python解释器的路径
     let g:ycm_server_python_interpreter = '/usr/bin/python'
 
