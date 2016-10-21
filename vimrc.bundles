@@ -370,8 +370,6 @@ call plug#end()
     let g:ycm_seed_identifiers_with_syntax=1
     " 设置Python解释器的路径
     let g:ycm_server_python_interpreter = '/usr/local/bin/python'
-    " 设置Python解释器的路径
-    let g:ycm_server_python_interpreter = '/usr/bin/python'
 
     "let g:ycm_seed_identifiers_with_syntax=1   "语言关键字补全, 不过python关键字都很短，所以，需要的自己打开
 
