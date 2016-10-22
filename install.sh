@@ -83,19 +83,4 @@ else
 fi
 export SHELL=$system_shell
 
-
-echo "Step4: compile YouCompleteMe"
-echo "It will take a long time, just be patient!"
-echo "If error,you need to compile it yourself"
-echo "cd $CURRENT_DIR/bundle/YouCompleteMe/ && python install.py --clang-completer"
-sed -i "/let g:ycm_seed.*1$/a\ \ \ \ \"\ 设置Python解释器的路径\n\ \ \ \ let g:ycm_server_python_interpreter = '$PYTHON'" $CURRENT_DIR/vimrc.bundles
-cd $CURRENT_DIR/bundle/YouCompleteMe/
-git submodule update --init --recursive
-if [ `which clang` ]   # check system clang
-then
-    $PYTHON install.py --clang-completer --system-libclang   # use system clang
-else
-    $PYTHON install.py --clang-completer
-fi
-
 echo "Install Done!"
