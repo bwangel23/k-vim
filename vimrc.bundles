@@ -457,9 +457,8 @@ call plug#end()
 
 " ################### 快速编码 ###################
 
-" nerdcommenter {{{
-    let g:NERDSpaceDelims=1
-    let g:NERDAltDelims_python = 1
+" vim-commentary {{{
+    autocmd FileType nginx setlocal commentstring=#\ %s
 " }}}
 
 " trailingwhitespace {{{
@@ -810,7 +809,6 @@ call plug#end()
 " }}}
 
 " nginx {{{
-    autocmd FileType nginx setlocal commentstring=#\ %s
 " }}}
 
 " emmet-vim {{{
