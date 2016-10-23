@@ -810,6 +810,7 @@ call plug#end()
 " }}}
 
 " nginx {{{
+    autocmd FileType nginx setlocal commentstring=#\ %s
 " }}}
 
 " emmet-vim {{{
