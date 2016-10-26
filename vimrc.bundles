@@ -254,7 +254,7 @@ if count(g:bundle_groups, 'html')
 endif
 
 if count(g:bundle_groups, 'nginx')
-    " Plug 'evanmiller/nginx-vim-syntax'
+    Plug 'bwangel23/nginx-vim-syntax'
 endif
 
 
@@ -369,7 +369,7 @@ call plug#end()
     " 开启语法关键字补全
     let g:ycm_seed_identifiers_with_syntax=1
     " 设置Python解释器的路径
-    let g:ycm_server_python_interpreter = '/usr/bin/python'
+    let g:ycm_server_python_interpreter = '/usr/bin/python3'
 
     "let g:ycm_seed_identifiers_with_syntax=1   "语言关键字补全, 不过python关键字都很短，所以，需要的自己打开
 
@@ -457,9 +457,8 @@ call plug#end()
 
 " ################### 快速编码 ###################
 
-" nerdcommenter {{{
-    let g:NERDSpaceDelims=1
-    let g:NERDAltDelims_python = 1
+" vim-commentary {{{
+    autocmd FileType nginx setlocal commentstring=#\ %s
 " }}}
 
 " trailingwhitespace {{{
