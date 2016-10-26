@@ -536,7 +536,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 autocmd FileType c,cpp set tabstop=8 shiftwidth=8 softtabstop=8 noexpandtab ai
 autocmd FileType css,javascript,python,ruby set tabstop=4 shiftwidth=4 expandtab ai
 autocmd FileType html,xml set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
-autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown.mkd
+autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown.mkd wrap
 autocmd BufRead,BufNewFile *.part set filetype=html
 " disable showmatch when use > in php
 au BufWinEnter *.php set mps-=<:>
