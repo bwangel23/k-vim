@@ -482,7 +482,9 @@ vnoremap > >gv
 map Y y$
 
 " 复制选中区到系统剪切板中
-vnoremap y "+y
+if has('xterm_clipboard')
+    vnoremap y "+y
+endif
 
 " auto jump to end of select
 " vnoremap <silent> y y`]
