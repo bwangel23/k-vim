@@ -260,7 +260,6 @@ endif
 
 " this is just for beta version
 if count(g:bundle_groups, 'beta')
-    Plug 'lilydjwg/fcitx.vim'
     " indent
     Plug 'nathanaelkane/vim-indent-guides'
     " <leader>ig to trigger
