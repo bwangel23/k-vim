@@ -459,6 +459,7 @@ call plug#end()
 
 " vim-commentary {{{
     autocmd FileType nginx setlocal commentstring=#\ %s
+    autocmd FileType awk setlocal commentstring=#\ %s
 " }}}
 
 " trailingwhitespace {{{
