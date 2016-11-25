@@ -560,7 +560,7 @@ function! AutoSetFileHead()
     if &filetype == 'sh'
         call setline(1,"#!/bin/bash")
         call setline(2,"#")
-        call setline(3,"# Author: bwangel<bwangel.me@gmail.com>	")
+        call setline(3,"# Author: bwangel<bwangel.me@gmail.com>")
         call setline(4,"# Date: ".strftime("%b,%d,%Y %H:%M"))
     endif
 
