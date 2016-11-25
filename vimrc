@@ -559,10 +559,9 @@ function! AutoSetFileHead()
     "如果文件类型为.sh文件
     if &filetype == 'sh'
         call setline(1,"#!/bin/bash")
-        call setline(2,"#History:")
-        call setline(3,"#   Michael	".strftime("%b,%d,%Y"))
-        call setline(4,"#Program:")
-        call setline(5,"#")
+        call setline(2,"#")
+        call setline(3,"# Author: bwangel<bwangel.me@gmail.com>	")
+        call setline(4,"# Date: ".strftime("%b,%d,%Y %H:%M"))
     endif
 
     "如果文件类型为python
