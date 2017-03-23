@@ -54,8 +54,8 @@ Plug 'tpope/vim-commentary'
 " for repeat -> enhance surround.vim, . to repeat command
 Plug 'tpope/vim-repeat' | Plug 'tpope/vim-surround'
 " trailingwhitespace
-" 快速去行尾空格 [, + <Space>]
-Plug 'bwangel23/vim-trailing-whitespace'
+" 快速去行尾空格
+Plug 'ntpeters/vim-better-whitespace'
 " easyalign
 " 快速赋值语句对齐
 Plug 'junegunn/vim-easy-align'
@@ -406,7 +406,8 @@ call plug#end()
 " }}}
 
 " trailingwhitespace {{{
-    map <leader><space> :FixWhitespace<cr>
+    map <leader>t :StripWhitespace<CR>
+    autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl autocmd BufEnter <buffer> EnableStripWhitespaceOnSave
 " }}}
 
 " easyalign {{{
