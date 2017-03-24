@@ -146,8 +146,7 @@ set ignorecase
 " 有一个或以上大写字母时仍大小写敏感
 set smartcase
 " 映射/为<leader>f
-" 这个键位和command-f容易搞混了，需要换一个
-" map <leader>f /
+noremap <Tab> /
 
 " 代码折叠
 set foldenable
