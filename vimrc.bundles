@@ -4,7 +4,7 @@
 
 " ################### 包依赖 #####################
 " package dependence:  ctags, ag(he_silver_searcher)
-" python dependence:   pep8, pyflakes
+" python dependence:   pep8, pyflakes, yapf
 
 " 非兼容vi模式。去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限
 set nocompatible
@@ -15,7 +15,7 @@ filetype off " required! turn off
 " inspired by spf13, 自定义需要的插件集合
 if !exists('g:bundle_groups')
     " let g:bundle_groups=['python', 'beta', 'markdown', 'json', 'nginx', 'golang', 'html']
-    let g:bundle_groups=['python', 'beta', 'markdown', 'json', 'nginx', 'html']
+    let g:bundle_groups=['python', 'beta', 'markdown', 'json', 'nginx', 'html', 'javascript']
 endif
 
 " ----------------------------------------------------------------------------
@@ -137,10 +137,6 @@ if count(g:bundle_groups, 'python')
     let g:vim_isort_map = '<C-i>'
 endif
 
-" if count(g:bundle_groups, 'shell')
-    " Plug 'Shougo/vimshell.vim'
-" endif
-
 if count(g:bundle_groups, 'json')
     " json
     Plug 'elzr/vim-json', {'for': 'json'}
@@ -149,6 +145,10 @@ endif
 if count(g:bundle_groups, 'html')
     " ###### emmet HTML complete #########
     Plug 'mattn/emmet-vim'
+endif
+
+if count(g:bundle_groups, 'javascript')
+    Plug 'tao12345666333/vim-vue'
 endif
 
 if count(g:bundle_groups, 'nginx')
@@ -161,9 +161,6 @@ endif
 
 " Add plugins to &runtimepath
 call plug#end()
-
-
-" ################### 基础 ######################
 
 
 " ################### 自动补全 ###################
@@ -211,18 +208,6 @@ call plug#end()
         \}
 " }}}
 
-" python-mode {{{
-    " 先关闭自动补全
-    let g:pymode_rope_complete_on_dot = 0
-    let g:pymode_rope_completion = 0
-    let g:pymode_rope_autoimport = 0
-    " Pymode自动运行开启
-    let g:pymode_run = 1
-    " 设置80 Char line
-    let g:pymode_options_colorcolumn = 1
-    let g:pymode_options_max_line_length = 79
-" }}}
-
 " ultisnips {{{
     let g:UltiSnipsExpandTrigger       = "<tab>"
     let g:UltiSnipsJumpForwardTrigger  = "<tab>"
@@ -264,9 +249,6 @@ call plug#end()
 " }}}
 
 
-" closetag {{{
-    let g:closetag_html_style=1
-" }}}
 
 " ################### 快速编码 ###################
 
@@ -521,6 +503,15 @@ call plug#end()
 " }}}
 
 " css {{{
+" }}}
+
+" html {{{
+    let g:user_emment_install_global = 0
+    autocmd FileType html,css,javascript,vue EmmetInstall
+    let g:user_emmet_expandabbr_key = '<C-E>'
+" }}}
+
+" vue {{{
 " }}}
 
 " nginx {{{
