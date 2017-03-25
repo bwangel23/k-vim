@@ -392,7 +392,7 @@ vnoremap > >gv
 map Y y$
 
 " 复制选中区到系统剪切板中
-if has('xterm_clipboard')
+if has('clipboard')
     vnoremap y "+y
 endif
 
