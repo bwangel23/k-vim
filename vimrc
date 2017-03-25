@@ -19,6 +19,7 @@
 "       -> 插件配置和具体设置在vimrc.bundles中
 "==========================================
 
+
 "==========================================
 " Initial Plugin 加载插件
 "==========================================
@@ -40,7 +41,7 @@ endif
 " ensure ftdetect et al work by including this after the bundle stuff
 filetype plugin indent on
 
-" NOTE: 以下配置有详细说明，一些特性不喜欢可以直接注解掉
+
 
 "==========================================
 " General Settings 基础设置
@@ -103,6 +104,7 @@ set magic
 set backspace=eol,start,indent
 " 转折换行的配置
 set whichwrap+=<,>
+
 
 
 "==========================================
@@ -189,6 +191,8 @@ set ttyfast
 " 00x增减数字时使用十进制
 set nrformats=
 
+
+
 "==========================================
 " FileEncode Settings 文件编码,格式
 "==========================================
@@ -209,6 +213,7 @@ set ffs=unix,dos,mac
 set formatoptions+=m
 " 合并两行中文时，不在中间加空格
 set formatoptions+=B
+
 
 
 "==========================================
@@ -245,6 +250,8 @@ autocmd CmdwinEnter * nnoremap <buffer> <CR> <CR>
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+
 
 "==========================================
 " HotKey Settings  自定义快捷键设置
@@ -342,6 +349,7 @@ nnoremap * #
 " for # indent, python文件中输入新行时#号注释不切回行首
 autocmd BufNewFile,BufRead *.py inoremap # X<c-h>#
 
+
 " tab/buffer相关
 
 " 切换前后buffer
@@ -350,6 +358,29 @@ nnoremap ]b :bnext<cr>
 " 使用方向键切换buffer
 noremap <left> :bp<CR>
 noremap <right> :bn<CR>
+
+
+" tab操作
+" http://vim.wikia.com/wiki/Alternative_tab_navigation
+" http://stackoverflow.com/questions/2005214/switching-to-a-particular-tab-in-vim
+
+" tab切换
+" normal模式下切换到确切的tab
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
+
+" 新建tab  Ctrl+t
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-t>     <Esc>:tabnew<CR>
+
 
 " => 选中及操作改键
 
@@ -393,6 +424,7 @@ nnoremap U <C-r>
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
 
 
 "==========================================
@@ -475,6 +507,7 @@ if has("autocmd")
     autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|INFO\|IDEA\|NOTICE\)')
   endif
 endif
+
 
 
 "==========================================
