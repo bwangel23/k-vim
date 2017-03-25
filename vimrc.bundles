@@ -2,8 +2,6 @@
 " bundle 插件管理和配置项
 " ==========================================
 
-"------------------------------------------- begin of configs --------------------------------------------
-
 " ################### 包依赖 #####################
 " package dependence:  ctags, ag(he_silver_searcher)
 " python dependence:   pep8, pyflake
@@ -76,12 +74,13 @@ Plug 'terryma/vim-expand-region'
 " multiplecursors
 Plug 'terryma/vim-multiple-cursors'
 
-" 暂时用fzf替代ctrlp
+" 使用fzf替代ctrlp
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " ctrlsf
 " 类似sublimetext的搜索
 " In CtrlSF window:
-" 回车/o, 打开 FIXME: 这里这个回车打开有点问题，待修复
+" O - 在当前窗口打开
+" p - 在预览窗口中打开，按Q退出预览窗口
 " t       在tab中打开(建议)
 " T - Lkie t but focus CtrlSF window instead of opened new tab.
 " q - Quit CtrlSF window.
@@ -653,4 +652,3 @@ call plug#end()
     " setenv PYTHONIOENCODING UTF-8
     " nnoremap <leader>y :call Yapf()<cr>
 " }}}
-"------------------------------------------- end of configs --------------------------------------------
