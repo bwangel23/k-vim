@@ -529,12 +529,6 @@ call plug#end()
 " ####### temp #######
 
 " beta {{{
-    " python code format
-    " format all file
-    autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
-    " format select block
-    " autocmd FileType python vnoremap <leader>y :!yapf<Cr>
-
     " Plug 'mindriot101/vim-yapf'
     " scriptencoding utf-8
     " let g:yapf_style = "google"
