@@ -147,7 +147,7 @@ set incsearch
 set ignorecase
 " 有一个或以上大写字母时仍大小写敏感
 set smartcase
-" 映射/为<leader>f
+" 映射/为<Tab>
 noremap <Tab> /
 
 " 代码折叠
@@ -316,7 +316,7 @@ nnoremap <S-Left> zH
 inoremap <C-y> <esc>gUiwea
 
 " 将%:h映射为%%，%:h的功能是显示当前缓冲区文件的绝对路径
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'
 
 " Go to home and end using capitalized directions
 noremap H ^
