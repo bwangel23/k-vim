@@ -147,8 +147,6 @@ set incsearch
 set ignorecase
 " 有一个或以上大写字母时仍大小写敏感
 set smartcase
-" 映射/为<Tab>
-noremap <Tab> /
 
 " 代码折叠
 set foldenable
@@ -425,7 +423,10 @@ nnoremap U <C-r>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+" 文件折叠
 
+nmap - zc
+nmap + zo
 
 "==========================================
 " FileType Settings  文件类型设置

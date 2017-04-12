@@ -15,7 +15,7 @@ filetype off " required! turn off
 " inspired by spf13, 自定义需要的插件集合
 if !exists('g:bundle_groups')
     " let g:bundle_groups=['python', 'beta', 'markdown', 'json', 'nginx', 'golang', 'html']
-    let g:bundle_groups=['python', 'beta', 'markdown', 'json', 'nginx', 'html', 'javascript']
+    let g:bundle_groups=['python', 'beta', 'markdown', 'json', 'nginx', 'html', 'javascript', 'latex']
 endif
 
 " ----------------------------------------------------------------------------
@@ -157,6 +157,12 @@ endif
 
 " this is just for beta version
 if count(g:bundle_groups, 'beta')
+    Plug 'aklt/plantuml-syntax'
+endif
+
+if count(g:bundle_groups, 'latex')
+    Plug 'vim-latex/vim-latex'
+    Plug 'xuhdev/vim-latex-live-preview'
 endif
 
 " Add plugins to &runtimepath
@@ -526,4 +532,9 @@ call plug#end()
     " let g:yapf_style = "pep8"
     " setenv PYTHONIOENCODING UTF-8
     " nnoremap <leader>y :call Yapf()<cr>
+" }}}
+
+" vim-latex-live-preview {{{
+    " autocmd FileType tex setl updatetime=1
+    let g:livepreview_previewer = 'open -a Preview'
 " }}}
