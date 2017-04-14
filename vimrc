@@ -503,8 +503,8 @@ if has("autocmd")
   if v:version > 701
     autocmd Syntax * call matchadd('Todo',  '\W\zs\(TODO\|FIXME\|CHANGED\|DONE\|XXX\|BUG\|HACK\)')
     autocmd Syntax * call matchadd('Debug', '\W\zs\(INFO\|IDEA\|NOTICE\)')
-    " 这里TIPS表示做的笔记
-    autocmd Syntax * call matchadd('pandocLinkLabel', '\W\zs\(TIPS\)')
+    " 这里TIPS表示做的笔记, DESC表示代码的描述
+    autocmd Syntax * call matchadd('pandocLinkLabel', '\W\zs\(TIPS\|DESC\)')
   endif
 endif
 
